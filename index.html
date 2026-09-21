@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas en la Galaxia 💛</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Librería Three.js y OrbitControls desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+
+  <!-- Audio de fondo -->
+  <audio id="musica" src="musica.mp3" loop></audio>
+
+  <!-- Pantalla de Bienvenida -->
+  <div id="overlay">
+    <div class="start-btn" onclick="iniciarExperiencia()">
+      <div class="icon">💡</div>
+      <p>Toca para iniciar</p>
+    </div>
+  </div>
+
+  <!-- Título principal superior -->
+  <h1 id="titulo-principal">Feliz Día de las Flores Amarillas Linda..🌻</h1>
+
+  <!-- Tarjeta emergente con mensaje personalizado -->
+  <div id="card" class="hidden">
+    <button class="close-btn" onclick="cerrarTarjeta()">×</button>
+    <h2>Para ti AYLEN 💛</h2>
+    <p>
+      Hay personas que llegan y nos hacen dar cuenta de lo hermoso que es tener a alguien especial. 
+      Gracias por cada momento, tu sonrisa ilumina todo a tu alrededor. 
+      ¡Que tengas un día maravilloso!
+    </p>
+  </div>
+
+  <!-- Canvas WebGL de Three.js -->
+  <script src="script.js"></script>
+</body>
+</html>
