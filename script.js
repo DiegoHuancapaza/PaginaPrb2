@@ -684,7 +684,6 @@ function crearCorazonCentral() {
 
   heartGroup.add(heartGlow);
   heartGroup.add(heartPoints);
-  heartGroup.add(heartLetterA);
   scene.add(heartGroup);
 
   const heartLight = new THREE.PointLight(0xfff2a6, 13, 36, 2.8);
