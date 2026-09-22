@@ -639,52 +639,8 @@ function crearCorazonCentral() {
   heartGlow.scale.set(1.54, 1.54, 1.54);
   heartGlow.rotation.z = 0;
 
-  const aPositions = [];
-  const aColors = [];
-  const aColor = new THREE.Color(0xfff7d2);
-
-  const addLetterAPoint = (x, y, z = 0.45) => {
-    aPositions.push(x, y, z);
-    aColors.push(aColor.r, aColor.g, aColor.b);
-  };
-
-  for (let i = 0; i <= 1; i += 0.05) {
-    const leftX = -0.78 + i * 0.63;
-    const leftY = -1.15 + i * 2.35;
-    addLetterAPoint(leftX, leftY, 0.42);
-
-    const rightX = 0.78 - i * 0.63;
-    const rightY = -1.15 + i * 2.35;
-    addLetterAPoint(rightX, rightY, 0.42);
-  }
-
-  for (let x = -0.36; x <= 0.36; x += 0.08) {
-    addLetterAPoint(x, 0.18, 0.48);
-  }
-
-  for (let x = -0.3; x <= 0.3; x += 0.09) {
-    addLetterAPoint(x, 0.04, 0.5);
-  }
-
-  const aGeometry = new THREE.BufferGeometry();
-  aGeometry.setAttribute('position', new THREE.Float32BufferAttribute(aPositions, 3));
-  aGeometry.setAttribute('color', new THREE.Float32BufferAttribute(aColors, 3));
-
-  const aMaterial = new THREE.PointsMaterial({
-    size: 0.11,
-    vertexColors: true,
-    transparent: true,
-    opacity: 1,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending
-  });
-
-  const heartLetterA = new THREE.Points(aGeometry, aMaterial);
-  heartLetterA.position.set(0, 0.08, 0.35);
-
   heartGroup.add(heartGlow);
   heartGroup.add(heartPoints);
-  heartGroup.add(heartLetterA);
   scene.add(heartGroup);
 
   const heartLight = new THREE.PointLight(0xfff2a6, 13, 36, 2.8);
